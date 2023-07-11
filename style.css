@@ -1,0 +1,76 @@
+  /*WEB.END*/
+  *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    } 
+    body{ 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: black;
+    }
+    /*CUBE*/
+    .cube{
+        position: absolute;
+       height: 300px; 
+       width: 300px;
+        transform-style: preserve-3d;
+    animation: animate 4s linear infinite;
+    }
+    
+    @keyframes animate{
+        0%{
+            transform: rotateX(-30deg) rotateY(0deg);
+        }
+        100%{
+            transform: rotateX(-30deg) rotateY(180deg);
+     
+        }
+    }
+    .cube div{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+    }
+    
+    .cube div span{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+    background: linear-gradient(#151515,#00ccff);
+    transform:rotateY(calc(90deg * var(--i)))translateZ(150px);
+    }
+    
+    .cube .top{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 300px;
+        height: 300px;
+        background: #222;
+        transform: rotateX(90deg)
+        translateZ(150px);
+    }
+    .cube .top:before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 300px;
+        height: 300px;
+        background: #038eb1;
+        transform: translateZ(-400px);
+    filter: blur(20px);
+    box-shadow: 0 0 120px rgba(0, 115, 160, 0.2);
+    box-shadow: 0 0 200px rgba(4, 129, 179, 0.4);
+    box-shadow: 0 0 300px rgba(0, 225, 255, 0.6);
+    box-shadow: 0 0 400px rgba(0, 247, 255, 0.8);
+    box-shadow: 0 0 500px rgb(0, 255, 234);}
